@@ -11,5 +11,8 @@
     "ui"
   ],
   "author": "GloriaZhou",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "parcel-bundler": "^1.12.4"
+  }
 }
