@@ -1,6 +1,7 @@
 <template>
-  <button class="h-button" :class="{[`icon-${iconPosition}`]: true}">
-    <h-icon class="icon" v-if="icon" :name="icon"></h-icon>
+  <button class="h-button" :class="{[`icon-${iconPosition}`]: true}" @click="$emit('click')">
+    <h-icon class="icon" v-if="icon && !loading" :name="icon"></h-icon>
+    <h-icon class="icon loading" v-if="loading" name="loading"></h-icon>
     <div class="content">
       <slot></slot>
     </div>
@@ -10,6 +11,10 @@
   export default {
     props: {
       icon: {},
+      loading: {
+        type: Boolean,
+        default: false
+      },
       iconPosition: {
         type: String,
         default: 'left',
@@ -21,6 +26,10 @@
   }
 </script>
 <style lang="scss">
+  @keyframes spin {
+    0% { transform: rotate(0deg);}
+    100% { transform: rotate(360deg);}
+  }
   .h-button {
     font-size: var(--font-size);
     height: var(--button-height);
@@ -47,6 +56,9 @@
     > .icon {
       order: 1;
       margin-right: .1em;
+    }
+    > .icon.loading {
+      animation: spin 2s infinite linear;
     }
     &.icon-right {
       > .content {

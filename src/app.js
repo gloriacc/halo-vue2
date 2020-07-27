@@ -5,5 +5,8 @@ import Icon from './icon'
 Vue.component('h-button', Button);
 Vue.component('h-icon', Icon);
 new Vue({
-  el: '#app'
+  el: '#app',
+  data: {
+    loading1: false
+  }
 })
