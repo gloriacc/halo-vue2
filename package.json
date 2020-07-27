@@ -17,5 +17,13 @@
   },
   "devDependencies": {
     "parcel-bundler": "^1.12.4"
-  }
+  },
+  "alias": {
+    "vue": "./node_modules/vue/dist/vue.common.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:gloriacc/halo.git"
+  },
+  "homepage": "https://github.com/gloriacc/halo/blob/master/README.md"
 }
